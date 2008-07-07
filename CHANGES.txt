@@ -1,16 +1,17 @@
-0.5.0 (unreleased)
+0.5.0 (2008-07-07)
 ==================
 
+  - rename iw.recipe.pound to plone.recipe.pound [youenn]
+  - fix doctests [youenn]
   - config recipe now additionally creates "poundrun" script
     which merely runs configured pound executable with correct configuration
     [rockyburt]
-
   - fetching current running user is now more robust [rockyburt]
 
 
 0.4.1 (2008-07-02)
 ==================
- 
+
   - fix Cheetah require [youenn]
 
 0.4.0 (2008-06-26)

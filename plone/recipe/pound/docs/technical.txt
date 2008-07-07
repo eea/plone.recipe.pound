@@ -25,7 +25,9 @@ As a recipe, you have to provide a part in your buildout file::
     >>> buildout = {'instance': {'location': test_dir},
     ...             'buildout': {'directory': test_dir,
     ...                          'parts-directory': parts_dir,
-    ...                          'bin-directory': bin_dir}}
+    ...                          'bin-directory': bin_dir,
+    ...                          'index' : 'http://pypi.python.org/pypi'},
+    ...             }
     >>> name = 'pound'
     >>> options = {'url': 'mypackage.tgz',
     ...            'owner': owner,
@@ -55,7 +57,7 @@ Running it::
 Checking the files created::
 
     >>> paths
-    ('...parts/pound/etc', '...poundctl')
+    ['...parts/pound/etc', '.../bin/poundctl', '.../bin/poundrun']
 
     >>> location = paths[0]
 

@@ -1,2 +1,2 @@
-see docs/README.txt
+see docs/*.txt
 

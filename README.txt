@@ -1,3 +1,3 @@
 .. contents::
 
-- Code repository: https://ingenploneeb.svn.sourceforge.net/svnroot/ingenploneeb/plone.recipe.pound/trunk
+- Code repository: https://ingeniweb.svn.sourceforge.net/svnroot/ingeniweb/plone.recipe.pound/trunk

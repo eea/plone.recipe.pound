@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C)2007 'Ingenploneeb'
+# Copyright (C)2007 'Ingeniweb'
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -76,8 +76,8 @@ setup(name='plone.recipe.pound',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='pound zope plone recipe',
-      author='Ingenploneeb',
-      author_email='support@ingenploneeb.com',
+      author='Ingeniweb',
+      author_email='support@ingeniweb.com',
       url='http://plone.org/products/plone-recipes',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
@@ -94,5 +94,5 @@ setup(name='plone.recipe.pound',
       ],
       entry_points=entry_points,
       tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
+      extras_require=dict(test=tests_require),
       )
