@@ -36,6 +36,8 @@ balancers - list of listener http with backend
 
 executable - path to pound, required if pound executable is not provided by the build recipe
 
+socket - Set the control socket path.
+
 
 Example usage
 =============
@@ -49,7 +51,7 @@ We'll start by creating a buildout that uses the recipe::
     ...
     ... [configpound]
     ... recipe = plone.recipe.pound:config
-    ... executable = pound
+    ... executable = /usr/sbin/pound
     ... balancers =
     ...    one  127.0.0.1:80 127.0.0.1:8080 127.0.0.1:8081,1
     ...    two  0.0.0.0:81 127.0.0.1:8082,1,120 127.0.0.1:8083 169.1.1.2:80
