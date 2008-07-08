@@ -6,11 +6,6 @@ trunk (2008-07-07)
 0.5.0 (2008-07-07)
 ==================
 
-  - xxx [Ingeniweb]
-
-0.5.0 (2008-07-07)
-==================
-
   - rename iw.recipe.pound to plone.recipe.pound [youenn]
   - fix doctests [youenn]
   - add socket option [mathieu pasquet]
