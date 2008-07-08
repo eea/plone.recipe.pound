@@ -1,17 +1,17 @@
-=======================
+==========================
 plone.recipe.pound package
-=======================
+==========================
 
 .. contents::
 
 What is plone.recipe.pound ?
-=========================
+============================
 
 `plone.recipe.pound` is a buildout recipe to compile and configure Pound.
 It uses `zc.recipe.cmmi` then configure pound.cfg.
 
 How to use plone.recipe.pound ?
-============================
+===============================
 
 As a recipe, you have to provide a part in your buildout file::
 
