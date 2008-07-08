@@ -99,6 +99,9 @@ Checking the pound.cfg created::
     # How long should Pound continue to answer existing connections after a receiving and INT or HUP signal
     Grace 30
     <BLANKLINE>
+    # Socket
+    Control "...var/pound.sock"
+    <BLANKLINE>
     # listen, redirect and ... to:
     # balancer for one
     ListenHTTP

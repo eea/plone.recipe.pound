@@ -32,6 +32,9 @@ TimeOut $timeout
 # How long should Pound continue to answer existing connections after a receiving and INT or HUP signal
 Grace $grace
 
+# Socket
+Control "$socket"
+
 # listen, redirect and ... to:
 #for $balancer in $balancers
 # balancer for $balancer.name

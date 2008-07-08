@@ -93,7 +93,14 @@ class ConfigureRecipe(object):
         tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
         tpl.group = self.buildoptions.get('group', tpl.owner)
 
-
+        tpl.socket = self.buildoptions.get(
+                         'socket',
+                         os.path.join(
+                              self.buildout['buildout']['directory'],
+                             'var',
+                             'pound.sock'
+                         )
+                     )
 
         # creating balancers
         balancer_cfg = []

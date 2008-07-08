@@ -3,6 +3,7 @@
 
   - rename iw.recipe.pound to plone.recipe.pound [youenn]
   - fix doctests [youenn]
+  - add socket option [mathieu pasquet]
   - config recipe now additionally creates "poundrun" script
     which merely runs configured pound executable with correct configuration
     [rockyburt]
