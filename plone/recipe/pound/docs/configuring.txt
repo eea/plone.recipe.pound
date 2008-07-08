@@ -36,6 +36,8 @@ balancers - list of listener http with backend
 
 executable - path to pound, required if pound executable is not provided by the build recipe
 
+socket - Set the control socket path.
+
 
 Example usage
 =============
