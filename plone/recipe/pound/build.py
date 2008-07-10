@@ -43,7 +43,7 @@ class BuildRecipe(CMMIRecipe):
         """installer"""
         # building extra options
         owner = self.options.get('owner', utils.get_sysuser())
-        group = self.options.get('group', owner)
+        group = self.options.get('group', utils.get_sysgroup())
         ssl_dir = self.options.get('ssl_dir', None)
         t_rsa = self.options.get('t_rsa', None)
         extra_options = self.options.get('extra-options', None)
