@@ -1,12 +1,7 @@
-trunk (2008-07-08)
-==================
-
-  - xxx [Ingeniweb]
-
 0.5.1 (2008-07-08)
 ==================
 
-  - xxx [Ingeniweb]
+  - fix bug in fecthing current group [youenn]
 
 0.5.0 (2008-07-07)
 ==================
