@@ -1,7 +1,7 @@
 trunk (2008-07-08)
 ==================
 
-  - xxx [Ingeniweb]
+  - poundctl restart need to use the right config file as well [jensens]
 
 0.5.1 (2008-07-08)
 ==================

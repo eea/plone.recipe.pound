@@ -26,7 +26,7 @@ restart)
 echo "Restarting pound"
 kill `cat \$POUND_PID`
 sleep 4
-\$POUND_RUNNER -p \$POUND_PID
+\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID
 ;;
 
 status)
