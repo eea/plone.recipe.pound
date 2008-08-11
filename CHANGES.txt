@@ -3,6 +3,8 @@ trunk (2008-08-08)
 
   - poundctl restart need to use the right config file as well [jensens]
   - In term of portability, bash scripts now use env to get their shell.
+  - Improve init script, use of start-stop-daemon to drop privileges and
+    fallback to su.
   - The poundctl script overrides the control binary present in $prefix/sbin.
     So are introduced options to fix that problem: (kiorky)
 

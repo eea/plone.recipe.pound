@@ -57,7 +57,7 @@ class ConfigureRecipe(object):
                 'var',
                 'pound.sock'
             )
-        ) 
+        )
 
     def install(self):
         """ install config fo pound """
@@ -181,6 +181,7 @@ class ConfigureRecipe(object):
             ctl = Template(open(os.path.join(curdir, x+'.tpl')).read())
             ctl.poundbin = self.options['executable']
             ctl.socket = self.options.get('socket', '')
+            ctl.user = self.buildoptions.get('owner', utils.get_sysuser())
             ctl.poundcontrol = os.path.join(
                 os.path.dirname(self.options['executable']),
                 'poundctl'
