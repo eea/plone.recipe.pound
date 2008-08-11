@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 BUILDOUT_PATH=""
 POUND_RUNNER="$poundbin"
 POUND_CFG="$poundcfg"

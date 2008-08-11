@@ -51,7 +51,7 @@ def setUp(test):
 def test_suite():
 
     globs = globals()
-    globs['test_dir'] = current_dir
+    globs['test_dir'] = os.path.abspath(current_dir)
     globs['bin_dir'] = '%s/bin' % current_dir
 
     suite = unittest.TestSuite((

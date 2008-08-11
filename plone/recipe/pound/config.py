@@ -50,6 +50,14 @@ class ConfigureRecipe(object):
 
         self.options = options
         self.buildoptions = get_options_from_build(buildout, options)
+        self.options['socket'] = self.buildoptions.get(
+            'socket',
+            os.path.join(
+                self.buildout['buildout']['directory'],
+                'var',
+                'pound.sock'
+            )
+        ) 
 
     def install(self):
         """ install config fo pound """
@@ -92,15 +100,7 @@ class ConfigureRecipe(object):
 
         tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
         tpl.group = self.buildoptions.get('group', tpl.owner)
-
-        tpl.socket = self.buildoptions.get(
-                         'socket',
-                         os.path.join(
-                              self.buildout['buildout']['directory'],
-                             'var',
-                             'pound.sock'
-                         )
-                     )
+        tpl.socket = self.options.get('socket', '')
 
         # creating balancers
         balancer_cfg = []
@@ -177,13 +177,18 @@ class ConfigureRecipe(object):
 
         pid = os.path.join(var_dir, 'pound.pid')
         scripts = []
-        for x in ('poundctl', 'poundrun'):
+        for x in ('poundctl', 'poundrun', 'poundcontrol'):
             ctl = Template(open(os.path.join(curdir, x+'.tpl')).read())
             ctl.poundbin = self.options['executable']
+            ctl.socket = self.options.get('socket', '')
+            ctl.poundcontrol = os.path.join(
+                os.path.dirname(self.options['executable']),
+                'poundctl'
+            )
             ctl.poundcfg = filename
             ctl.poundpid = pid
             bin_dir = self.buildout['buildout']['bin-directory']
-            script_name = os.path.join(bin_dir, x)
+            script_name = os.path.join(bin_dir, self.options.get('%s-binary' % x, x))
             f = open(script_name, 'w')
             try:
                 print >>f, ctl

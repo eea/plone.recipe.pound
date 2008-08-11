@@ -57,7 +57,7 @@ Running it::
 Checking the files created::
 
     >>> paths
-    ['...parts/pound/etc', '.../bin/poundctl', '.../bin/poundrun']
+    ['...parts/pound/etc', '.../bin/poundctl', '.../bin/poundrun', '.../bin/poundcontrol']
 
     >>> location = paths[0]
 
@@ -69,8 +69,8 @@ Checking the pound.cfg created::
     # created by plone.recipe.pound
     <BLANKLINE>
     # global options:
-    User        "youenn"
-    Group       "youenn"
+    User        "..."
+    Group       "..."
     <BLANKLINE>
     Daemon 1
     <BLANKLINE>
@@ -169,7 +169,7 @@ Checking the pound.cfg created::
 We also have a general script that is added in the buildout binary folder::
 
     >>> print open(join(bin_dir, 'poundctl')).read()
-    #!/bin/bash
+    #!/usr/bin/env bash
     BUILDOUT_PATH=""
     ...
 

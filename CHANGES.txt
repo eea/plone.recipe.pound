@@ -1,7 +1,15 @@
-trunk (2008-07-08)
+trunk (2008-08-08)
 ==================
 
   - poundctl restart need to use the right config file as well [jensens]
+  - In term of portability, bash scripts now use env to get their shell.
+  - The poundctl script overrides the control binary present in $prefix/sbin.
+    So are introduced options to fix that problem: (kiorky)
+
+        - A `poundcontrol` script is added to wrap the real poundctl binary.
+        - Customize the names of generated scripts.
+          To use them, simply add  `poundctl-binary`, `poundrun-binary`,
+          `poundcontrol-binary` to your options.
 
 0.5.1 (2008-07-08)
 ==================

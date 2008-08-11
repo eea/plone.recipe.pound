@@ -21,7 +21,7 @@ This module contains the tool of plone.recipe.pound
 import os
 from setuptools import setup, find_packages
 
-version = '0.5.1'
+version = '0.5.2'
 
 README = os.path.join(os.path.dirname(__file__),
               'plone',

@@ -38,6 +38,9 @@ executable - path to pound, required if pound executable is not provided by the 
 
 socket - Set the control socket path.
 
+poundctl-binary - Set the init script name
+poundrun-binary - Set the daemon binary name
+poundcontrol-binary - Set the pound controller name  (it wraps the pound's poundctl binary)
 
 Example usage
 =============
