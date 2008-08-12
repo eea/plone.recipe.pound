@@ -99,7 +99,7 @@ class ConfigureRecipe(object):
             raise zc.buildout.UserError("Grace is invalid")
 
         try:
-            tpl.xhttp = int(self.options.get('xttp', 2))
+            tpl.xhttp = int(self.options.get('xhttp', 2))
         except ValueError:
             raise zc.buildout.UserError("xHTTP is invalid")
 
