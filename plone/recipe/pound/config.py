@@ -97,6 +97,10 @@ class ConfigureRecipe(object):
             tpl.grace = int(self.options.get('grace',30))
         except ValueError:
             raise zc.buildout.UserError("Grace is invalid")
+        try:
+            tpl.grace = int(self.options.get('xttp', 2))
+        except ValueError:
+            raise zc.buildout.UserError("xHTTP is invalid")
 
         tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
         tpl.group = self.buildoptions.get('group', tpl.owner)

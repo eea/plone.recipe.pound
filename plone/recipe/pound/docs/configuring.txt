@@ -30,6 +30,18 @@ timeout - TimeOut value
 grace - Grace value
     How long should Pound continue to answer existing connections after a receiving and INT or HUP signal (default: 30 seconds). The configured listeners are closed immediately. You can bypass this behaviour by stopping Pound with a TERM or QUIT signal, in which case the program exits without any delay.
 
+xhttp - xHTTP value
+
+    - 0 (default) accept only standard HTTP requests (GET, POST, HEAD).
+    - 1 additionally allow extended HTTP requests (PUT, DELETE).
+    - 2 additionally allow standard WebDAV verbs (LOCK, UNLOCK, PROPFIND,
+    - PROPPATCH, SEARCH, MKCOL, MOVE, COPY, OPTIONS, TRACE, MKACTIVITY,
+      CHECKOUT, MERGE, REPORT).
+    - 3 additionally allow MS extensions WebDAV verbs (SUBSCRIBE, BPROPPATCH,
+      POLL, BMOVE, BCOPY, BDELETE, CONNECT).
+    - 4 additionally allow MS RPC extensions verbs (RPC_IN_DATA, RPC_OUT_DATA).
+
+
 balancers - list of listener http with backend
     Set the list of backends, the list by default is
     **name adress:port adress-backend-1:port-backend-1(,priority,timeOut)  adress-backend-2:port-backend-2(,priority,timeOut) ... adress-backend-n:port-backend-n(,priority,timeOut)**

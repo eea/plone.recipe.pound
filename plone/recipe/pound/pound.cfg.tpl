@@ -42,7 +42,7 @@ ListenHTTP
     Address $balancer.adress
     Port    $balancer.port
     # for webdav
-    xHTTP    2
+    xHTTP    $xttp
     Service
     #for $backend in $balancer.backends
     BackEnd
