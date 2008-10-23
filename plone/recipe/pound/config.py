@@ -97,9 +97,15 @@ class ConfigureRecipe(object):
             tpl.grace = int(self.options.get('grace',30))
         except ValueError:
             raise zc.buildout.UserError("Grace is invalid")
-
-        tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
-        tpl.group = self.buildoptions.get('group', tpl.owner)
+        try:
+            tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
+        except ValueError:
+            raise zc.buildout.UserError("Owner is invalid")
+        try:    
+            tpl.group = self.buildoptions.get('group', utils.get_sysgroup())
+        except ValueError:
+            raise zc.buildout.UserError("Group is invalid")
+            
         tpl.socket = self.options.get('socket', '')
 
         # creating balancers
