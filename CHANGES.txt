@@ -1,12 +1,13 @@
 trunk (2008-10-23)
 ==================
 
-  - xxx [Ingeniweb]
+  - Add new options to configure sticky session [youenn]
+
 
 0.5.3 (2008-10-23)
 ==================
 
-  - fix regression in fetching current grounp [youenn] 
+  - fix regression in fetching current group [youenn]
   - poundctl restart need to use the right config file as well [jensens]
   - In term of portability, bash scripts now use env to get their shell.
   - The poundctl script overrides the control binary present in $prefix/sbin.

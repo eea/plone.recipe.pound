@@ -38,6 +38,14 @@ executable - path to pound, required if pound executable is not provided by the 
 
 socket - Set the control socket path.
 
+sticky - if on , add a sticky session configuration (default on, possible value on/off)
+
+sessiontype - Type of the sticky session (default COOKIE)
+
+sessioncookie - Name of the cookie of the stickysession (default __ac)
+
+sessiontimeout - Time out of the sticky session (default 300)
+
 poundctl-binary - Set the init script name
 poundrun-binary - Set the daemon binary name
 poundcontrol-binary - Set the pound controller name  (it wraps the pound's poundctl binary)

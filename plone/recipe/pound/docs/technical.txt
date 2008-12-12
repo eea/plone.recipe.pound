@@ -64,7 +64,8 @@ Checking the files created::
 Checking the pound.cfg created::
 
     >>> cfg = join(location, 'pound.cfg')
-    >>> print open(cfg).read()
+    >>> f = open(cfg)
+    >>> print f.read()
     # pound.cfg
     # created by plone.recipe.pound
     <BLANKLINE>
@@ -120,12 +121,14 @@ Checking the pound.cfg created::
             Port    8081
     <BLANKLINE>
         End
+    <BLANKLINE>
         # for session cookies
         Session
             Type COOKIE
             ID "__ac"
             TTL 300
         End
+    <BLANKLINE>
         End
     End
     # balancer for two
@@ -152,18 +155,38 @@ Checking the pound.cfg created::
             Port    80
     <BLANKLINE>
         End
+    <BLANKLINE>
         # for session cookies
         Session
             Type COOKIE
             ID "__ac"
             TTL 300
         End
+    <BLANKLINE>
         End
     End
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
+
+Test sticky session::
+
+    >>> f.close()
+    >>> options['sticky'] = 'off'
+    >>> recipe = ConfigureRecipe(buildout, name, options)
+
+Running it::
+
+    >>> paths = recipe.install()
+    >>> f = open(cfg,'r')
+    >>> 'Type COOKIE' in open(cfg).read()
+    True
+
+    >>> options['sessioncookie'] = '__ac'
+    >>> options['sessiontimeout'] = '800'
+    >>> recipe = ConfigureRecipe(buildout, name, options)
+    >>> paths = recipe.install()
 
 
 We also have a general script that is added in the buildout binary folder::

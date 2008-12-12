@@ -57,12 +57,16 @@ ListenHTTP
 
     End
     #end for
+
+    #if $sticky == 'on'
     # for session cookies
     Session
-        Type COOKIE
-        ID "__ac"
-        TTL 300
+        Type $sessiontype
+        ID "$sessioncookie"
+        TTL $sessiontimeout
     End
+    #end if
+
     End
 End
 #end for

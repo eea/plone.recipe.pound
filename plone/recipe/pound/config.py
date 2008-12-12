@@ -18,7 +18,7 @@
 
 import os
 import zc
-
+from types import BooleanType
 from Cheetah.Template import Template
 
 from plone.recipe.pound import utils
@@ -57,7 +57,7 @@ class ConfigureRecipe(object):
                 'var',
                 'pound.sock'
             )
-        ) 
+        )
 
     def install(self):
         """ install config fo pound """
@@ -101,11 +101,32 @@ class ConfigureRecipe(object):
             tpl.owner = self.buildoptions.get('owner', utils.get_sysuser())
         except ValueError:
             raise zc.buildout.UserError("Owner is invalid")
-        try:    
+        try:
             tpl.group = self.buildoptions.get('group', utils.get_sysgroup())
         except ValueError:
             raise zc.buildout.UserError("Group is invalid")
-            
+        ## session management
+        try:
+            tpl.sticky = self.options.get('sticky', 'on')
+        except ValueError:
+            raise zc.buildout.UserError("Sticky is invalid")
+        try:
+            tpl.sessiontype = self.options.get('sessiontype', 'COOKIE')
+        except ValueError:
+            raise zc.buildout.UserError("Sessiontype is invalid")
+        try:
+            tpl.sessiontimeout = int(self.options.get('sessiontimeout', 300))
+        except ValueError:
+            raise zc.buildout.UserError("SessionTimeout is invalid")
+        try:
+            tpl.sessioncookie = self.options.get('sessioncookie', '__ac')
+        except ValueError:
+            raise zc.buildout.UserError("Sessioncookie is invalid")
+        try:
+            tpl.sessiontimeout = int(self.options.get('sessiontimeout', 300))
+        except ValueError:
+            raise zc.buildout.UserError("SessionTimeout is invalid")
+
         tpl.socket = self.options.get('socket', '')
 
         # creating balancers
@@ -173,6 +194,7 @@ class ConfigureRecipe(object):
             print >>f, tpl
         finally:
             f.close()
+
         if self.buildoptions:
             self.options['executable'] = os.path.join(self.buildoptions['location'],
                                                       'sbin','pound')
