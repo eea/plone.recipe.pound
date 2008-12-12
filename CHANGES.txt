@@ -1,4 +1,9 @@
-trunk (2008-10-23)
+trunk (2008-12-12)
+==================
+
+  - xxx [Ingeniweb]
+
+0.5.4 (2008-12-12)
 ==================
 
   - Add new options to configure sticky session [youenn]
