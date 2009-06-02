@@ -77,6 +77,7 @@ setup(name='plone.recipe.pound',
         ],
       keywords='pound zope plone recipe',
       author='Ingeniweb',
+      
       author_email='support@ingeniweb.com',
       url='http://plone.org/products/plone-recipes',
       license='GPL',
