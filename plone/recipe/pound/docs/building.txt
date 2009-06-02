@@ -49,7 +49,7 @@ Running the buildout gives us::
 
     >>> print system(buildout)
     Installing poundbuild.
-    poundbuild: compilation option : --with-owner=youenn --with-group=youenn
+    poundbuild: compilation option : --with-owner=... --with-group=...
     poundbuild: Downloading http://www.apsis.ch/pound/Pound-2.3.2.tgz
     poundbuild: Unpacking and configuring
     ...

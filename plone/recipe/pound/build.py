@@ -46,8 +46,12 @@ class BuildRecipe(CMMIRecipe):
         group = self.options.get('group', utils.get_sysgroup())
         ssl_dir = self.options.get('ssl_dir', None)
         t_rsa = self.options.get('t_rsa', None)
-        extra_options = self.options.get('extra-options', None)
-        extra = '--with-owner=%s --with-group=%s' % (owner, group)
+        extra_options = self.options.get('extra-options', '')
+        extra = ''
+        if '--with-owner' not in extra_options:
+            extra += ' --with-owner=%s' % owner
+        if '--with-group' not in extra_options:     
+            extra += ' --with-group=%s' %  group
         if ssl_dir is not None:
             if os.path.isdir(ssl_dir):
                 extra += ' --with-ssl=%s' % ssl_dir
@@ -68,7 +72,7 @@ class BuildRecipe(CMMIRecipe):
             extra += ' %s' % (extra_options,)
         self.logger.info('compilation option : %s' % (extra,))
 
-        self.options['extra_options'] = extra
+        self.extra_options = extra
 
         # uses cmmi installer
         installed = CMMIRecipe.install(self)
