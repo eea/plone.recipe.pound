@@ -1,7 +1,7 @@
 Building
 ********
 
-Supported options
+supported options
 =================
 
 The recipe supports the following options:
@@ -29,7 +29,7 @@ group
 extra-options
     extra options for compilation
 
-Example usage
+example usage
 =============
 
 We'll start by creating a buildout that uses the recipe::
