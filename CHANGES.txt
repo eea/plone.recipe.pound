@@ -1,4 +1,9 @@
-trunk (2008-12-12)
+trunk (2009-06-02)
+==================
+
+  - xxx [Ingeniweb]
+
+0.5.5 (2009-06-02)
 ==================
 
   - cmmi change extra_options configuration [youenn]
