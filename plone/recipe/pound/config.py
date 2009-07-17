@@ -115,10 +115,6 @@ class ConfigureRecipe(object):
         except ValueError:
             raise zc.buildout.UserError("Sessiontype is invalid")
         try:
-            tpl.sessiontimeout = int(self.options.get('sessiontimeout', 300))
-        except ValueError:
-            raise zc.buildout.UserError("SessionTimeout is invalid")
-        try:
             tpl.sessioncookie = self.options.get('sessioncookie', '__ac')
         except ValueError:
             raise zc.buildout.UserError("Sessioncookie is invalid")
