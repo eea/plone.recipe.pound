@@ -1,6 +1,9 @@
-trunk (2009-06-02)
+trunk (2011-05-21)
 ==================
 
+  - only set ID in session block of pound.cfg if value of sessiontype is 
+    COOKIE; otherwise Pound will not start (e.g., ID is set but type
+    is IP) [bryanw]
   - xxx [Ingeniweb]
 
 0.5.5 (2009-06-02)
