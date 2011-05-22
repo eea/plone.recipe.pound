@@ -59,10 +59,12 @@ ListenHTTP
     #end for
 
     #if $sticky == 'on'
-    # for session cookies
+    # for sticky sessions
     Session
         Type $sessiontype
+        #if $sessiontype == 'COOKIE'
         ID "$sessioncookie"
+        #end if
         TTL $sessiontimeout
     End
     #end if
