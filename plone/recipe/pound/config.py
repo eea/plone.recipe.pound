@@ -17,6 +17,7 @@
 """Config Recipe pound"""
 
 import os
+import stat
 import zc
 from types import BooleanType
 from Cheetah.Template import Template
@@ -218,7 +219,8 @@ class ConfigureRecipe(object):
                 print >>f, ctl
             finally:
                 f.close()
-            os.chmod(script_name, 0755)
+            mode = os.stat(script_name).st_mode
+            os.chmod(script_name, mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
             scripts.append(script_name)
 
         return [etc_dir] + scripts

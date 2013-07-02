@@ -17,6 +17,7 @@
 """Build Recipe pound"""
 
 import os
+import stat
 import zc
 import logging
 
@@ -50,7 +51,7 @@ class BuildRecipe(CMMIRecipe):
         extra = ''
         if '--with-owner' not in extra_options:
             extra += ' --with-owner=%s' % owner
-        if '--with-group' not in extra_options:     
+        if '--with-group' not in extra_options:
             extra += ' --with-group=%s' %  group
         if ssl_dir is not None:
             if os.path.isdir(ssl_dir):
@@ -90,7 +91,8 @@ class BuildRecipe(CMMIRecipe):
         f = open(script_name, 'wb')
         f.write(script)
         f.close()
-        os.chmod(script_name, 0755)
+        mode = os.stat(script_name).st_mode
+        os.chmod(script_name, mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
         return (installed, script_name)
 
 
