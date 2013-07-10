@@ -3,12 +3,13 @@ BUILDOUT_PATH=""
 POUND_RUNNER="$poundbin"
 POUND_CFG="$poundcfg"
 POUND_PID="$poundpid"
+LOG_FILENAME="$logfilename"
 
 case \$1 in
 
 start)
 echo "Starting pound"
-\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID
+\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID 2> \$LOG_FILENAME
 sleep 2
 ;;
 
@@ -26,7 +27,7 @@ restart)
 echo "Restarting pound"
 kill `cat \$POUND_PID`
 sleep 4
-\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID
+\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID 2> \$LOG_FILENAME
 ;;
 
 status)

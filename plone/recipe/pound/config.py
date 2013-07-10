@@ -210,6 +210,7 @@ class ConfigureRecipe(object):
                 os.path.dirname(self.options['executable']),
                 'poundctl'
             )
+            ctl.logfilename = self.options['log_file']
             ctl.poundcfg = filename
             ctl.poundpid = pid
             bin_dir = self.buildout['buildout']['bin-directory']

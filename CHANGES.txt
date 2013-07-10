@@ -1,6 +1,9 @@
 trunk (2011-05-21)
 ==================
 
+  - added log_file option to allow output redirection to this file,
+    when using with log_facility set to -
+    [Tiberiu Ichim]
   - only set ID in session block of pound.cfg if value of sessiontype is 
     COOKIE; otherwise Pound will not start (e.g., ID is set but type
     is IP) [bryanw]
