@@ -9,7 +9,7 @@ case \$1 in
 
 start)
 echo "Starting pound"
-\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID 2> \$LOG_FILENAME
+\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID &>> \$LOG_FILENAME
 sleep 2
 ;;
 
@@ -27,7 +27,7 @@ restart)
 echo "Restarting pound"
 kill `cat \$POUND_PID`
 sleep 4
-\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID 2> \$LOG_FILENAME
+\$POUND_RUNNER -f \$POUND_CFG -p \$POUND_PID &>> \$LOG_FILENAME
 ;;
 
 status)
