@@ -215,6 +215,10 @@ class ConfigureRecipe(object):
             ctl.poundpid = pid
             bin_dir = self.buildout['buildout']['bin-directory']
             script_name = os.path.join(bin_dir, self.options.get('%s-binary' % x, x))
+            try:
+                os.remove(script_name)
+            except OSError:
+                pass
             f = open(script_name, 'w')
             try:
                 print >>f, ctl
