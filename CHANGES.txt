@@ -1,4 +1,4 @@
-0.5.6-dev - (unreleased)
+0.5.6-eea - (23-07-2013)
 ========================
 
   - added log_file option to allow output redirection to this file,
