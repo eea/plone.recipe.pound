@@ -13,7 +13,7 @@ entry_points = {"zc.buildout": ["build = plone.recipe.pound:BuildRecipe",
 setup(name=NAME,
       version=VERSION,
       description="Recipe to install and configure Pound",
-      long_description=(open("README.txt").read() + "\n" +
+      long_description=(open("README.rst").read() + "\n" +
                         open(os.path.join("docs", "HISTORY.txt")).read()),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
