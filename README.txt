@@ -1,7 +1,3 @@
-.. contents::
-
-Recipe to install and configure Pound.
-
 ======================
 Pound recipe for Plone
 ======================
