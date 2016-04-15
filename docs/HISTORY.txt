@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.6.dev0 - (unreleased)
------------------------
+0.6 - (2016-04-15)
+------------------
 * back to PEP 440 version number
   [alecghica refs #70945]
 * updated HISTORY markup and package structure to fit a regular egg release
@@ -95,3 +95,4 @@ Changelog
 ------------------
  * Initial release
    [tarek]
+
