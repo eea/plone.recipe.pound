@@ -2,6 +2,8 @@
 -----------------------
 * back to PEP 440 version number
   [alecghica refs #70945]
+* updated HISTORY markup and package structure to fit a regular egg release
+  [alecghica refs #70945]
 
 0.5.6 (2013-07-10)
 ------------------
