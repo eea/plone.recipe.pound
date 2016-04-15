@@ -1,4 +1,19 @@
 .. contents::
 
-- Code repository: https://svn.plone.org/svn/collective/buildout/plone.recipe.pound
-- Bug tracker: http://trac.ingeniweb.com/
+Recipe to install and configure Pound.
+
+======================
+Pound recipe for Plone
+======================
+
+Recipe to install and configure Pound.
+
+Contents
+========
+
+.. contents::
+
+Introduction
+============
+
+Recipe to install and configure Pound.
