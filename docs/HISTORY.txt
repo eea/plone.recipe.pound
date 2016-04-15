@@ -1,0 +1,92 @@
+0.6.dev0 - (unreleased)
+-----------------------
+* back to PEP 440 version number
+  [alecghica refs #70945]
+
+0.5.6 (2013-07-10)
+------------------
+* added log_file option to allow output redirection to this file,
+  when using with log_facility set to -
+  [tiberiuichim]
+* only set ID in session block of pound.cfg if value of sessiontype is 
+  COOKIE; otherwise Pound will not start (e.g., ID is set but type is IP)
+  [bryanw]
+* Delete script before writing to it, this way we avoid chmod permission errors
+  when the current user is not the script owner.
+  [hman]
+* Markup fixes and cleanup
+  [alecghica]
+* Fixed poundctl.tpl to make logs file persistent
+  [alecghica]
+
+0.5.5 (2009-06-02)
+------------------
+* cmmi change extra_options configuration
+  [youenn]
+
+0.5.4 (2008-12-12)
+------------------
+* Add new options to configure sticky session
+  [youenn]
+
+0.5.3 (2008-10-23)
+------------------
+* fix regression in fetching current group
+  [youenn]
+* poundctl restart need to use the right config file as well
+  [jensens]
+* In term of portability, bash scripts now use env to get their shell.
+* The poundctl script overrides the control binary present in $prefix/sbin.
+  So are introduced options to fix that problem: (kiorky)
+    - A `poundcontrol` script is added to wrap the real poundctl binary.
+    - Customize the names of generated scripts.
+      To use them, simply add  `poundctl-binary`, `poundrun-binary`,
+      `poundcontrol-binary` to your options.
+
+0.5.1 (2008-07-08)
+------------------
+* fix bug in fecthing current group
+  [youenn]
+
+0.5.0 (2008-07-07)
+------------------
+* rename iw.recipe.pound to plone.recipe.pound
+  [youenn]
+* fix doctests
+  [youenn]
+* add socket option
+  [mathieu pasquet]
+* config recipe now additionally creates "poundrun" script
+  which merely runs configured pound executable with correct configuration
+  [rockyburt]
+* fetching current running user is now more robust
+  [rockyburt]
+
+0.4.1 (2008-07-02)
+------------------
+* fix Cheetah require
+  [youenn]
+
+0.4.0 (2008-06-26)
+------------------
+* add a ctl script (as plone.recipe.squid)
+  [youenn]
+
+0.3.0 (2008-06-01)
+------------------
+* devide recipe in two part : build and config part
+  [youenn]
+* add options to build (extra-options)
+  [youenn]
+* add options to the config file (time-out, priority ...)
+  [youenn]
+
+0.2.0 (2008-05-01)
+------------------
+* added a script to launch pound with the right conf file
+  [tarek]
+
+0.1.0 (2008-04-01)
+------------------
+ * Initial release
+   [tarek]
